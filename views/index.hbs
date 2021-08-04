@@ -1,0 +1,271 @@
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">Veterinaria X</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a data-scroll class="nav-link active" aria-current="page" href="#home">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a data-scroll class="nav-link" href="#novedades">Novedades</a>
+                </li>
+                <li class="nav-item">
+                    <a data-scroll class="nav-link" href="#trayectoria">Trayectoria</a>
+                </li>
+                <li class="nav-item">
+                    <a data-scroll class="nav-link" href="#nosotros">Nosotros</a>
+                </li>
+                <li class="nav-item">
+                    <a data-scroll class="nav-link" href="#visitanos">Visitanos</a>
+                </li>
+
+                </li>
+            </ul>
+            <form class="d-flex">
+                <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Buscar</button>
+            </form>
+        </div>
+    </div>
+</nav>
+
+<div class="container-fluid">
+    <div id="home" class="row alingn-items-center hero">
+        <div class="col-lg-3 offset-lg">
+            <br>
+            <br>
+            <br>
+            <p>Bajada</p>
+            <h1>Titulo Principal</h1>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Earum perferendis accusamus porro, autem
+                laudantium aperiam aspernatur iure dicta magni alias amet assumenda dolore minima reprehenderit
+                doloremque expedita atque</p>
+        </div>
+
+    </div>
+
+</div>
+<!--cierra el contenedor fluido grande-->
+
+
+
+<!-- inicio novedades -->
+<div id="novedades" class="row py-4 hero2">
+    <div class="col-md-5 offset-md py3">
+        <h2>Novedades</h2>
+        <ul class="lista-novedades">
+            {{#each novedades}}
+            <li><a href="" data-toogle="modal" data-target="#modal{{id}}"><img src="images/huellaceleste.png" alt=""></a>{{titulo}}
+            </li>
+            {{/each}}
+            </ul>
+    </div>
+    {{#each novedades}}
+    {{!-- inicio modal --}}
+
+    <div class="modal fade" id="modal {{ id }}" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centred modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-tittle"
+                    id="staticBackdropLabel">{{ titulo}}</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <h2>{{ subtitulo }}</h2>
+                    <p>{{cuerpo}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{!-- fin modal --}}
+    {{/each}}
+    </div>
+
+
+    <!--inicio testimonios -->
+    <div class="col-md-3 offset-lg-2">
+        <div class="rounded py-3 testimonios">
+            <h2 class="text-center">Testimonios</h2>
+            <div class="accordion accordion-flush" id="accordionFlushExample">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="flush-headingOne">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                            Testimonio #1
+                        </button>
+                    </h2>
+                    <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cupiditate
+                            odio excepturi explicabo quos, iusto unde blanditiis incidunt provident maxime, neque
+                            quaerat recusandae impedit reiciendis veritatis eligendi suscipit labore nobis minima.
+                            <code></code></div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="flush-headingTwo">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                            Testimonio #2
+                        </button>
+                    </h2>
+                    <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum ea
+                            quos, quis nobis magni enim deserunt repellendus at ullam quasi praesentium dolor ducimus
+                            incidunt, aliquam animi temporibus odio nihil ad. <code></code></div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="flush-headingThree">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#flush-collapseThree" aria-expanded="false"
+                            aria-controls="flush-collapseThree">
+                            Testimonio #3
+                        </button>
+                    </h2>
+                    <div id="flush-collapseThree" class="accordion-collapse collapse"
+                        aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur
+                            enim harum necessitatibus ut eius, inventore eaque aperiam beatae, architecto obcaecati
+                            nihil hic tempore similique aliquam consectetur corporis cum commodi labore! <code></code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+    <!--cierra testimonios -->
+
+</div> <!-- cierra novedades -->
+
+<!--inicio trayectoria-->
+<div id="trayectoria" class="row py-4 hero3">
+    <div class="col-md offset-lg-6">
+        <div class="rounded py trayectoria">
+            <h2 class="text-center">Trayectoria</h2>
+            <div class="col-lg-4 offset-lg-4">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium possimus sed qui earum corrupti
+                    id, optio fuga repellendus iste doloremque, pariatur nemo nihil itaque, ipsa voluptates porro
+                    adipisci voluptas repellat!</p>
+            </div>
+
+
+
+        </div>
+    </div>
+</div>
+<!--fin trayectoria-->
+
+<!--inicio nosotros-->
+<div id="nosotros" class="row py-4 hero4">
+    <div class="col-lg-8 offset-lg-2">
+        <h2>Nosotros</h2>
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            <div class="col">
+                <div class="card h-100">
+                    <img src="images/vet1.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Carlos Gomez</h5>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui quis soluta,
+                            explicabo in omnis iste sunt id alias, nemo ab, molestiae et quasi? Nemo natus officiis
+                            beatae ipsa a magnam.</p>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100">
+                    <img src="images/vet3.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Gabriela Diaz</h5>
+                        <p class="card-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. In laborum ex
+                            quae accusamus illum! Consequuntur praesentium, eaque enim dignissimos magni sed quos
+                            debitis sequi sapiente ut aut ratione cumque! Optio.</p>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100">
+                    <img src="images/vet2.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Luca Gabriel</h5>
+                        <p class="card-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nemo ut quis
+                            magnam eum quisquam sint voluptatibus corporis aspernatur illum, nostrum numquam rerum enim
+                            consequuntur temporibus soluta exercitationem laudantium voluptatum nesciunt!</p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--fin nosotros-->
+
+<!--inicio visitanos-->
+
+<div id="visitanos" class="row py-4">
+    <div class="col-md-4 offset-md-2">
+        <h2>Visitanos</h2>
+        <div class="embed-responsive embed-responsive-16by9">
+            <iframe class="embed-responsive-item"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3284.2202745348927!2d-58.42212748514005!3d-34.59859106473315!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcca62d4cf1563%3A0x686de505d84c67e6!2sAv.%20Medrano%20951%2C%20C1179AAQ%20CABA!5e0!3m2!1ses!2sar!4v1622605816834!5m2!1ses!2sar"
+                style="border:0;" allowfullscreen=""></iframe>
+        </div>
+
+    </div>
+    <!--inicio contactanos-->
+    <div class="col-md-4 mt-4 mt-sm-0">
+        <h2>Contactanos</h2>
+        <form action="/" method="post">
+        <div class="row">
+            <div class="col">
+                <input type="text" class="form-control" placeholder="Nombre" aria-label="Nombre" name="nombre">
+            </div>
+            <div class="col">
+                <input type="text" class="form-control" placeholder="Apellido" aria-label="Apellido" name="apellido">
+            </div>
+            <div class="row py-3">
+                <div class="col">
+                    <label for="inputEmail4" class="form-label">Email</label>
+                    <input type="inputEmail4" class="form-control" id="inputEmail4" placeholder="ejemplo@email.com" aria-label="ejemplo@email.com" name="inputEmail4">
+                </div>
+            </div>
+            <div class="row py-3">
+                <div class="col">
+                    <label for="telefono" class="form-label">Telefono</label>
+                    <input type="telefono" class="form-control" id="telefono" placeholder="--" aria-label="--" name="telefono">
+                </div>
+            </div>
+            <div class="row py-3">
+                <div class="col">
+                    <label class="py-2" for="mensaje">Mensaje</label>
+                    <div class="form-floating">
+                        <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2"
+                            style="height: 100px" name="mensaje"></textarea>
+                        <label for="floatingTextarea2"></label>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <button type="submit" class="btn btn-primary">Enviar</button>
+            </div>
+            </form>
+            {{message}}
+
+        </div>
+    </div>
+    <!--fin contactanos-->
+
+</div>
+<!--fin visitanos-->
