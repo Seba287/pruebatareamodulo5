@@ -116,13 +116,7 @@ color:white;
 
 }
 
-.card-img-top{
- 
-/*width: 280px;
-height: 200px;*/
 
- 
-}
 
 .card-title{
     font-family: 'Abril Fatface', cursive ;
@@ -132,3 +126,4 @@ height: 200px;*/
 .card-body{
     background-color:darkgrey;
 }
+

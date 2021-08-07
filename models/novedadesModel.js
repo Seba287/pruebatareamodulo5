@@ -17,6 +17,19 @@ async function deleteNovedadesById(id) {
   
 }
 
+/* para agregar una novedad en la tabla de novedades*/
+
+async function insertNovedad(obj) {
+    try {
+        var query = "insert into novedades set ?";
+        var rows = await pool.query(query, [obj])
+        return rows;
+
+    }catch (error) {
+        console.log(error);
+        throw error;
+        }//cierra catch
+}// cierra insert
 
 
-module.exports = { getNovedades, deleteNovedadesById }
+module.exports = { getNovedades, deleteNovedadesById, insertNovedad }
