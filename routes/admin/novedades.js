@@ -40,8 +40,8 @@ router.post('/agregar', async (req, res, next) => {
       await novedadesModel.insertNovedad(req.body);
       res.redirect('/admin/novedades')
     } else {
-      res.render('/admin/agregar', {
-        layout: 'admin/layuot',
+      res.render('admin/agregar', {
+        layout: 'admin/layout',
         error: true,
         message: 'Todos los campos son requeridos'
       })
@@ -49,13 +49,47 @@ router.post('/agregar', async (req, res, next) => {
   } catch (error) {
     console.log(error)
     res.render('admin/agregar', {
-      layout: 'admin/layuot',
+      layout: 'admin/layout',
       error: true,
       message: 'No se cargo la novedad'
     })
   }
 })
 
+// traer una novedad para poder modificarla
+
+router.get('/modificar/:id', async (req, res, next) => {
+  var id = req.params.id;
+  var novedad = await novedadesModel.getNovedadById(id);
+  res.render('admin/modificar', {// modificar.hbs
+    layout: 'admin/layout',
+    novedad
+  });
+}); //cierro get modi
+
+// update
+
+router.post('/modificar', async (req, res, next) => {
+  try {
+    let obj = {
+      titulo: req.body.titulo,
+      subtitulo: req.body.subtitulo,
+      cuerpo: req.body.cuerpo
+    }
+
+    console.log(obj)// para ver si trae los datos
+    
+    await novedadesModel.modificarNovedadById(obj, req.body.id);
+    res.redirect('/admin/novedades');
+  } catch (error) {
+    console.log(error)
+    res.render('admin/modificar', {
+      layout: 'admin/layout',
+      error: true, 
+      message: 'No se modifico la novedad'
+    })
+  }
+});
 
 
 module.exports = router;
