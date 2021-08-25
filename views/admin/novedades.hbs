@@ -21,6 +21,15 @@
         <a href="/admin/novedades/agregar" class="btn btn-success"><i class="fa fa-plus"></i>Nuevo</a>
     </div>
 
+    <div class="col-3 text-right">
+        <form class="form-inline" action="/admin/novedades" method="get">
+        <input class="form-control" type="serch" placeholder="Buscar" aria-label="search" name="q" {{#if q}} value="{{q}}" {{/if}}>
+        <button class="btn btn secondary my-2 my-sm-0" type="submit">
+            <i class="fa fa-search" aria-hidden="true"></i>
+        </button>
+        </form>
+    </div>
+
 </div>
 {{!-- fin fila 2 --}}
 {{!-- inicio fila 3 --}}
@@ -50,7 +59,12 @@
                 </tr>
              {{/each}}
             </tbody>
-        </table>
+            </table>
+            {{#if is_search}}
+            {{#unless novedades.length}}
+            No se encontraron resultados para "<b>{{q}}</b>"
+            {{/unless}}
+            {{/if}}
     </div>
 </div>
 {{!-- fin fila 3 --}}
